@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ERP Seguridad LTDA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- ═══════════ TOPBAR ═══════════ -->
+  <header class="topbar">
+
+    <!-- Marca -->
+    <a class="tb-brand" href="index.html">
+      <div class="tb-brand-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a3a6b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="11" width="18" height="11" rx="2"/>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+      </div>
+      <div>
+        <div class="tb-brand-name">ERP Seguridad LTDA</div>
+        <div class="tb-brand-sub">Sistema de gestión</div>
+      </div>
+    </a>
+
+    <!-- Módulos por rol (se muestran / ocultan vía JS) -->
+    <nav class="tb-nav" id="tbNav">
+
+      <!-- Administrador -->
+      <div class="tb-menu" data-roles="admin">
+        <button class="tb-menu-btn" onclick="toggleMenu(this)">
+          <span class="dot"></span>
+          Administración
+          <svg class="chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="tb-dropdown">
+          <div class="dd-header"><span class="dd-role-badge"><span class="dot"></span>Administrador</span></div>
+          <div class="dd-items">
+            <div class="dd-divider"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RRHH -->
+      <div class="tb-menu" data-roles="rrhh">
+        <button class="tb-menu-btn" onclick="toggleMenu(this)">
+          <span class="dot"></span>
+          Recursos Humanos
+          <svg class="chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="tb-dropdown">
+          <div class="dd-header"><span class="dd-role-badge"><span class="dot"></span>RRHH</span></div>
+          <div class="dd-items">
+          </div>
+        </div>
+      </div>
+
+      <!-- Bodega/Ventas -->
+      <div class="tb-menu" data-roles="ventas">
+        <button class="tb-menu-btn" onclick="toggleMenu(this)">
+          <span class="dot"></span>
+          Inventario &amp; Ventas
+          <svg class="chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="tb-dropdown">
+          <div class="dd-header"><span class="dd-role-badge"><span class="dot"></span>Ventas / Bodega</span></div>
+          <div class="dd-items">
+          </div>
+        </div>
+      </div>
+
+      <!-- Empleado -->
+      <div class="tb-menu" data-roles="empleado">
+        <button class="tb-menu-btn" onclick="toggleMenu(this)">
+          <span class="dot"></span>
+          Mi Portal
+          <svg class="chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="tb-dropdown">
+          <div class="dd-header"><span class="dd-role-badge"><span class="dot"></span>Empleado</span></div>
+          <div class="dd-items">
+          </div>
+        </div>
+      </div>
+
+    </nav>
+
+    <!-- Selector de rol (demo) -->
+    <div class="tb-right">
+      <div class="tb-role-selector">
+        <label for="roleSelect">Vista:</label>
+        <select id="roleSelect" onchange="setRole(this.value)">
+          <option value="admin">Administrador</option>
+          <option value="rrhh">RRHH</option>
+          <option value="ventas">Ventas / Bodega</option>
+          <option value="empleado">Empleado</option>
+        </select>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        ERP Seguridad LTDA
+      </div>
+      <h1 id="heroTitle">Panel de Administración</h1>
+      <p id="heroDesc">Acceda a todos los módulos del sistema desde este panel central. Use el menú superior para navegar entre módulos.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════ MAIN ═══════════ -->
+  <main class="main">
+
+    <p class="section-label" id="gridLabel">Módulos disponibles</p>
+
+    <div class="modules-grid" id="modulesGrid">
+
+     
+
+    </div>
+
+    <!-- Estado vacío (empleado sin acceso a grid completo) -->
+    <div class="empty-state" id="emptyState">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <h3>Sin módulos adicionales</h3>
+      <p>Use el menú superior para acceder a su portal.</p>
+    </div>
+
+  </main>
+
+  <script>
+    const roleConfig = {
+      empleado: { title: 'Mi Portal',                   desc: 'Acceda a su información personal, liquidaciones, vacaciones y más.' },
+    };
+
+    let currentRole = 'admin';
+
+    function setRole(role) {
+      currentRole = role;
+
+      // Hero
+      document.getElementById('heroTitle').textContent = roleConfig[role].title;
+      document.getElementById('heroDesc').textContent  = roleConfig[role].desc;
+
+      // Topbar menus
+      document.querySelectorAll('#tbNav .tb-menu').forEach(menu => {
+        const roles = (menu.dataset.roles || '').split(' ');
+        menu.style.display = roles.includes(role) ? '' : 'none';
+      });
+
+      // Cards
+      let visible = 0;
+      document.querySelectorAll('#modulesGrid .module-card').forEach(card => {
+        const roles = (card.dataset.roles || '').split(' ');
+        const show  = roles.includes(role);
+        card.classList.toggle('hidden', !show);
+        if (show) visible++;
+      });
+
+      // Empty state
+      document.getElementById('emptyState').style.display  = visible === 0 ? 'flex' : 'none';
+      document.getElementById('modulesGrid').style.display = visible  >  0 ? 'grid' : 'none';
+    }
+
+    function toggleMenu(btn) {
+      const menu = btn.closest('.tb-menu');
+      const isOpen = menu.classList.contains('open');
+      // Cierra todos
+      document.querySelectorAll('.tb-menu.open').forEach(m => m.classList.remove('open'));
+      if (!isOpen) menu.classList.add('open');
+    }
+
+    // Cerrar al hacer clic fuera
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.tb-menu')) {
+        document.querySelectorAll('.tb-menu.open').forEach(m => m.classList.remove('open'));
+      }
+    });
+
+    // Init
+    setRole('admin');
+  </script>
+
+</body>
+</html>
