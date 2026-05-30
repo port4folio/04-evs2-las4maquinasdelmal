@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Módulo Recursos Humanos — ERP Seguridad LTDA</title>
+  <link rel="stylesheet" href="modulo_rrhh.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="hero-badge">ERP Seguridad LTDA</span>
+      <h1>Módulo Recursos Humanos</h1>
+      <p>Administración integral del personal: remuneraciones, leyes sociales, préstamos, vacaciones y control de asistencia.</p>
+    </div>
+  </header>
+
+  <nav class="nav-tabs" role="tablist">
+    <button class="nav-tab active" onclick="switchTab('ficha')" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Ficha Personal
+    </button>
+    <button class="nav-tab" onclick="switchTab('calculo')" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+      Remuneraciones
+    </button>
+    <button class="nav-tab" onclick="switchTab('contratos')" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Contratos
+    </button>
+    <button class="nav-tab" onclick="switchTab('asistencia')" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Asistencia
+    </button>
+    <button class="nav-tab" onclick="switchTab('vacaciones')" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l4-8 4 4 4-6 4 10"/></svg>
+      Vacaciones
+    </button>
+    <button class="nav-tab" onclick="switchTab('informes')" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Informes
+    </button>
+  </nav>
+
+  <main class="content">
+
+    <!-- FICHA PERSONAL -->
+    <section id="sec-ficha" class="section active">
+      <div class="section-header">
+        <h2>1. Ficha Completa del Personal</h2>
+        <p>Información personal, fotografía, datos laborales, currículum, cargas familiares y asignación a reloj control.</p>
+      </div>
+      <div class="ficha-grid">
+        <div class="ficha-card perfil">
+          <div class="avatar">JG</div>
+          <div class="perfil-info">
+            <strong>Juan González Pérez</strong>
+            <span>RUT: 12.345.678-9</span>
+            <span>Cargo: Supervisor de Seguridad</span>
+            <span>Centro de Costo: Zona Norte</span>
+            <span class="badge-activo">Activo</span>
+          </div>
+        </div>
+        <div class="ficha-tabs-wrap">
+          <div class="ftabs">
+            <button class="ftab active">Personal</button>
+            <button class="ftab">Laboral</button>
+            <button class="ftab">Previsión</button>
+            <button class="ftab">Cargas</button>
+            <button class="ftab">Currículum</button>
+          </div>
+          <div class="ftab-body">
+            <div class="info-row"><span>Fecha nacimiento</span><strong>15/03/1985</strong></div>
+            <div class="info-row"><span>Dirección</span><strong>Av. Principal 1234, Santiago</strong></div>
+            <div class="info-row"><span>Teléfono</span><strong>+56 9 8765 4321</strong></div>
+            <div class="info-row"><span>Email</span><strong>j.gonzalez@seguridadltda.cl</strong></div>
+            <div class="info-row"><span>Estado civil</span><strong>Casado</strong></div>
+            <div class="info-row"><span>Nacionalidad</span><strong>Chilena</strong></div>
+          </div>
+        </div>
+      </div>
+      <div class="info-banner">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <p>La ficha registra datos personales, laborales, previsionales y atributos especiales. Permite además la asignación a reloj control para el registro de asistencia automatizado.</p>
+      </div>
+    </section>
+
+    <!-- REMUNERACIONES -->
+    <section id="sec-calculo" class="section">
+      <div class="section-header">
+        <h2>2. Modelo de Cálculo Paramétrico</h2>
+        <p>Esquema flexible para crear Haberes, Descuentos y Parámetros con las fórmulas que los relacionan, para efectuar las liquidaciones de pagos al personal.</p>
+      </div>
+      <div class="liq-grid">
+        <div class="liq-col">
+          <p class="liq-title green">Haberes</p>
+          <div class="liq-item"><span>Sueldo Base</span><strong>$850.000</strong></div>
+          <div class="liq-item"><span>Horas Extra</span><strong>$42.500</strong></div>
+          <div class="liq-item"><span>Bono Asistencia</span><strong>$30.000</strong></div>
+          <div class="liq-item"><span>Colación</span><strong>$55.000</strong></div>
+          <div class="liq-item total"><span>Total Haberes</span><strong>$977.500</strong></div>
+        </div>
+        <div class="liq-col">
+          <p class="liq-title red">Descuentos</p>
+          <div class="liq-item"><span>AFP (10%)</span><strong>$85.000</strong></div>
+          <div class="liq-item"><span>Isapre (7%)</span><strong>$59.500</strong></div>
+          <div class="liq-item"><span>Seguro Cesantía</span><strong>$5.950</strong></div>
+          <div class="liq-item"><span>Cuota Préstamo</span><strong>$30.000</strong></div>
+          <div class="liq-item total"><span>Total Descuentos</span><strong>$180.450</strong></div>
+        </div>
+        <div class="liq-col resumen">
+          <p class="liq-title blue">Resumen</p>
+          <div class="liq-item"><span>Total Haberes</span><strong>$977.500</strong></div>
+          <div class="liq-item"><span>Total Descuentos</span><strong>$180.450</strong></div>
+          <div class="liq-item neto"><span>Líquido a Pagar</span><strong>$797.050</strong></div>
+          <button class="btn-liq">Imprimir Liquidación</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTRATOS -->
+    <section id="sec-contratos" class="section">
+      <div class="section-header">
+        <h2>3. Contratos y Finiquitos</h2>
+        <p>Genera contratos y finiquitos individuales o grupales en base a la información de cada empleado.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="ficon blue">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3>Contrato Individual</h3>
+          <p>Generación automática del contrato de trabajo en base a los datos de la ficha del empleado, con firma electrónica.</p>
+        </div>
+        <div class="feature-card">
+          <div class="ficon amber">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Contratos Grupales</h3>
+          <p>Generación masiva de contratos para grupos de empleados según cargo, centro de costo u otros criterios.</p>
+        </div>
+        <div class="feature-card">
+          <div class="ficon red">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+          </div>
+          <h3>Finiquito Individual</h3>
+          <p>Cálculo y emisión del finiquito con todos los conceptos legales: indemnización, feriado proporcional, etc.</p>
+        </div>
+        <div class="feature-card">
+          <div class="ficon green">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h3>Licencias Médicas</h3>
+          <p>Registro y control de licencias médicas, integradas automáticamente al cálculo mensual de remuneraciones.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASISTENCIA -->
+    <section id="sec-asistencia" class="section">
+      <div class="section-header">
+        <h2>5. Control de Asistencia</h2>
+        <p>Control completo de horas trabajadas, atrasos y ausentismos a través de turnos y marcaciones de reloj control.</p>
+      </div>
+      <div class="asist-table-wrap">
+        <table class="asist-table">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Turno</th>
+              <th>Entrada</th>
+              <th>Salida</th>
+              <th>Horas Trabajadas</th>
+              <th>Atraso</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Lun 03/06</td><td>Mañana</td><td>08:02</td><td>17:05</td><td>9h 03m</td><td>—</td><td><span class="badge ok">Normal</span></td></tr>
+            <tr><td>Mar 04/06</td><td>Mañana</td><td>08:18</td><td>17:00</td><td>8h 42m</td><td>18 min</td><td><span class="badge warn">Atraso</span></td></tr>
+            <tr><td>Mié 05/06</td><td>Mañana</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge info">Licencia</span></td></tr>
+            <tr><td>Jue 06/06</td><td>Mañana</td><td>08:00</td><td>17:00</td><td>9h 00m</td><td>—</td><td><span class="badge ok">Normal</span></td></tr>
+            <tr><td>Vie 07/06</td><td>Mañana</td><td>08:05</td><td>17:10</td><td>9h 05m</td><td>—</td><td><span class="badge ok">Normal</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- VACACIONES -->
+    <section id="sec-vacaciones" class="section">
+      <div class="section-header">
+        <h2>6. Planificación y Control de Vacaciones</h2>
+        <p>Gestión de solicitudes, planificación y asignación de vacaciones. Control de días tomados y días pendientes.</p>
+      </div>
+      <div class="vac-grid">
+        <div class="vac-stat">
+          <p class="vac-num blue">15</p>
+          <p class="vac-label">Días con derecho</p>
+        </div>
+        <div class="vac-stat">
+          <p class="vac-num green">10</p>
+          <p class="vac-label">Días tomados</p>
+        </div>
+        <div class="vac-stat">
+          <p class="vac-num amber">5</p>
+          <p class="vac-label">Días pendientes</p>
+        </div>
+      </div>
+      <div class="sol-list">
+        <p class="sol-title">Solicitudes de Vacaciones</p>
+        <div class="sol-item">
+          <div><strong>15 Ene — 22 Ene 2025</strong><span>6 días hábiles · Descanso anual</span></div>
+          <span class="badge ok">Aprobada</span>
+        </div>
+        <div class="sol-item">
+          <div><strong>07 Abr — 11 Abr 2025</strong><span>4 días hábiles · Viaje familiar</span></div>
+          <span class="badge ok">Aprobada</span>
+        </div>
+        <div class="sol-item">
+          <div><strong>20 Jul — 22 Jul 2025</strong><span>3 días hábiles · Trámites personales</span></div>
+          <span class="badge warn">Pendiente</span>
+        </div>
+      </div>
+      <button class="btn-nueva-sol">+ Nueva Solicitud</button>
+    </section>
+
+    <!-- INFORMES -->
+    <section id="sec-informes" class="section">
+      <div class="section-header">
+        <h2>7. Consultas e Informes</h2>
+        <p>Reportes definibles por el usuario con toda la información del personal, planillas legales y estadísticas de gestión.</p>
+      </div>
+      <div class="informes-grid">
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg><span>Planillas AFP / Isapre / INP</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span>Ficha Individual de Empleado</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Libro de Asistencia</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Atrasos y Ausencias</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 17l4-8 4 4 4-6 4 10"/></svg><span>Planificación de Vacaciones</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>Contratos y Finiquitos</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Certificados de Renta</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg><span>Distribución por Centro de Costo</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><span>Historia Rentas Imponibles</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Certificado de Antigüedad</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span>Detalle Licencias por Trabajador</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>Cuenta Corriente del Personal</span></div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function switchTab(id) {
+      var ids = ['ficha','calculo','contratos','asistencia','vacaciones','informes'];
+      document.querySelectorAll('.nav-tab').forEach(function(t, i) {
+        var active = ids[i] === id;
+        t.classList.toggle('active', active);
+        t.setAttribute('aria-selected', active);
+      });
+      document.querySelectorAll('.section').forEach(function(s) {
+        s.classList.toggle('active', s.id === 'sec-' + id);
+      });
+    }
+  </script>
+</body>
+</html>
