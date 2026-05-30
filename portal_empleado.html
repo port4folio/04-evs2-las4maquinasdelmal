@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal del Empleado — ERP Seguridad LTDA</title>
+  <link rel="stylesheet" href="portal_empleado.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="hero-badge">Recursos Humanos</span>
+      <h1>Portal del Empleado</h1>
+      <p>Autoservicio personalizado: acceda a su información, liquidaciones, vacaciones, asistencia y más desde cualquier lugar.</p>
+    </div>
+  </header>
+
+  <nav class="nav-tabs" role="tablist">
+    <button class="nav-tab active" onclick="switchTab('info')" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Mi Información
+    </button>
+    <button class="nav-tab" onclick="switchTab('liquidaciones')" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+      Liquidaciones
+    </button>
+    <button class="nav-tab" onclick="switchTab('vacaciones')" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 17l4-8 4 4 4-6 4 10"/></svg>
+      Vacaciones
+    </button>
+    <button class="nav-tab" onclick="switchTab('asistencia')" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Asistencia
+    </button>
+    <button class="nav-tab" onclick="switchTab('licencias')" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Licencias
+    </button>
+    <button class="nav-tab" onclick="switchTab('anticipos')" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      Anticipos
+    </button>
+  </nav>
+
+  <main class="content">
+
+    <!-- MI INFORMACIÓN -->
+    <section id="sec-info" class="section active">
+      <div class="section-header">
+        <h2>1. Actualizar Mi Información Personal</h2>
+        <p>Consulte y actualice los datos de su ficha: información personal, laboral, previsional, cargas familiares y evaluaciones.</p>
+      </div>
+      <div class="emp-perfil">
+        <div class="emp-avatar">JG</div>
+        <div class="emp-datos">
+          <p class="emp-nombre">Juan González Pérez</p>
+          <p class="emp-cargo">Supervisor de Seguridad · Zona Norte</p>
+          <p class="emp-rut">RUT 12.345.678-9</p>
+        </div>
+        <span class="badge-activo">Activo</span>
+      </div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Nombre completo</label>
+          <input type="text" value="Juan González Pérez" />
+        </div>
+        <div class="form-group">
+          <label>Correo electrónico</label>
+          <input type="email" value="j.gonzalez@seguridadltda.cl" />
+        </div>
+        <div class="form-group">
+          <label>Teléfono</label>
+          <input type="text" value="+56 9 8765 4321" />
+        </div>
+        <div class="form-group">
+          <label>Dirección</label>
+          <input type="text" value="Av. Principal 1234, Santiago" />
+        </div>
+        <div class="form-group">
+          <label>Estado civil</label>
+          <select><option>Casado</option><option>Soltero</option><option>Divorciado</option></select>
+        </div>
+        <div class="form-group">
+          <label>Número de cargas familiares</label>
+          <input type="number" value="2" />
+        </div>
+      </div>
+      <button class="btn-primary">Guardar Cambios</button>
+      <div class="info-banner">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <p>La empresa determina qué información puede ver y cuál puede modificar. Los cambios quedan sujetos a validación del área de Recursos Humanos.</p>
+      </div>
+    </section>
+
+    <!-- LIQUIDACIONES -->
+    <section id="sec-liquidaciones" class="section">
+      <div class="section-header">
+        <h2>2. Consultar e Imprimir Liquidaciones</h2>
+        <p>Acceda a todas sus liquidaciones de renta por mes e imprima las que necesite.</p>
+      </div>
+      <div class="liq-list">
+        <div class="liq-row">
+          <div class="liq-mes">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/></svg>
+            <span>Mayo 2025</span>
+          </div>
+          <span class="liq-monto">$797.050</span>
+          <button class="btn-sm">Imprimir</button>
+        </div>
+        <div class="liq-row">
+          <div class="liq-mes">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/></svg>
+            <span>Abril 2025</span>
+          </div>
+          <span class="liq-monto">$784.500</span>
+          <button class="btn-sm">Imprimir</button>
+        </div>
+        <div class="liq-row">
+          <div class="liq-mes">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/></svg>
+            <span>Marzo 2025</span>
+          </div>
+          <span class="liq-monto">$791.200</span>
+          <button class="btn-sm">Imprimir</button>
+        </div>
+        <div class="liq-row">
+          <div class="liq-mes">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/></svg>
+            <span>Febrero 2025</span>
+          </div>
+          <span class="liq-monto">$780.000</span>
+          <button class="btn-sm">Imprimir</button>
+        </div>
+        <div class="liq-row">
+          <div class="liq-mes">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/></svg>
+            <span>Enero 2025</span>
+          </div>
+          <span class="liq-monto">$775.300</span>
+          <button class="btn-sm">Imprimir</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VACACIONES -->
+    <section id="sec-vacaciones" class="section">
+      <div class="section-header">
+        <h2>3. Solicitar Vacaciones e Imprimir Ficha</h2>
+        <p>Solicite vacaciones indicando el rango de fechas y consulte los días tomados y pendientes.</p>
+      </div>
+      <div class="vac-stats">
+        <div class="vac-stat"><p class="vnum blue">15</p><p class="vlabel">Días con derecho</p></div>
+        <div class="vac-stat"><p class="vnum green">10</p><p class="vlabel">Días tomados</p></div>
+        <div class="vac-stat"><p class="vnum amber">5</p><p class="vlabel">Días pendientes</p></div>
+      </div>
+      <div class="form-card">
+        <p class="form-card-title">Nueva Solicitud de Vacaciones</p>
+        <div class="form-grid2">
+          <div class="form-group"><label>Fecha de inicio</label><input type="date" /></div>
+          <div class="form-group"><label>Fecha de término</label><input type="date" /></div>
+          <div class="form-group"><label>Días hábiles</label><input type="number" placeholder="0" readonly /></div>
+          <div class="form-group"><label>Motivo</label><input type="text" placeholder="Ingrese el motivo" /></div>
+        </div>
+        <div class="btn-row">
+          <button class="btn-primary">Enviar Solicitud</button>
+          <button class="btn-outline">Imprimir Ficha</button>
+        </div>
+      </div>
+      <div class="cert-btn-wrap">
+        <button class="btn-outline">Imprimir Certificado de Antigüedad</button>
+      </div>
+    </section>
+
+    <!-- ASISTENCIA -->
+    <section id="sec-asistencia" class="section">
+      <div class="section-header">
+        <h2>5. Mi Hoja de Control de Asistencia</h2>
+        <p>Consulte el detalle diario de entradas, salidas, horas trabajadas y ausentismos en el rango de fechas que elija.</p>
+      </div>
+      <div class="filter-row">
+        <div class="form-group"><label>Desde</label><input type="date" value="2025-06-01" /></div>
+        <div class="form-group"><label>Hasta</label><input type="date" value="2025-06-07" /></div>
+        <button class="btn-primary" style="align-self:flex-end;">Consultar</button>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Fecha</th><th>Entrada</th><th>Salida</th><th>Hrs. Trabajadas</th><th>Ausentismo</th><th>Estado</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>03/06/2025</td><td>08:02</td><td>17:05</td><td>9h 03m</td><td>—</td><td><span class="badge ok">Normal</span></td></tr>
+            <tr><td>04/06/2025</td><td>08:18</td><td>17:00</td><td>8h 42m</td><td>—</td><td><span class="badge warn">Atraso 18 min</span></td></tr>
+            <tr><td>05/06/2025</td><td>—</td><td>—</td><td>—</td><td>8h 00m</td><td><span class="badge info">Licencia</span></td></tr>
+            <tr><td>06/06/2025</td><td>08:00</td><td>17:00</td><td>9h 00m</td><td>—</td><td><span class="badge ok">Normal</span></td></tr>
+            <tr><td>07/06/2025</td><td>08:05</td><td>17:10</td><td>9h 05m</td><td>—</td><td><span class="badge ok">Normal</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- LICENCIAS -->
+    <section id="sec-licencias" class="section">
+      <div class="section-header">
+        <h2>6. Consultar Mis Licencias Médicas</h2>
+        <p>Revise sus licencias médicas en un período determinado, tanto aprobadas como rechazadas.</p>
+      </div>
+      <div class="filter-row">
+        <div class="form-group"><label>Período desde</label><input type="date" value="2025-01-01" /></div>
+        <div class="form-group"><label>Período hasta</label><input type="date" value="2025-06-30" /></div>
+        <button class="btn-primary" style="align-self:flex-end;">Buscar</button>
+      </div>
+      <div class="licencias-list">
+        <div class="lic-item">
+          <div class="lic-icon green"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="lic-info"><strong>Licencia Tipo 1 — Enfermedad común</strong><span>05/03/2025 al 07/03/2025 · 3 días</span></div>
+          <span class="badge ok">Aprobada</span>
+        </div>
+        <div class="lic-item">
+          <div class="lic-icon green"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="lic-info"><strong>Licencia Tipo 1 — Enfermedad común</strong><span>05/06/2025 al 05/06/2025 · 1 día</span></div>
+          <span class="badge ok">Aprobada</span>
+        </div>
+        <div class="lic-item">
+          <div class="lic-icon red"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="lic-info"><strong>Licencia Tipo 2 — Accidente laboral</strong><span>15/04/2025 al 17/04/2025 · 3 días</span></div>
+          <span class="badge danger">Rechazada</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANTICIPOS -->
+    <section id="sec-anticipos" class="section">
+      <div class="section-header">
+        <h2>7. Solicitar Anticipo</h2>
+        <p>Realice directamente su solicitud de anticipo indicando el monto y un motivo. La solicitud se envía vía email al encargado de remuneraciones.</p>
+      </div>
+      <div class="form-card">
+        <p class="form-card-title">Nueva Solicitud de Anticipo</p>
+        <div class="form-grid2">
+          <div class="form-group"><label>Monto solicitado ($)</label><input type="number" placeholder="Ej: 200000" /></div>
+          <div class="form-group"><label>Fecha requerida</label><input type="date" /></div>
+          <div class="form-group full"><label>Motivo</label><textarea rows="3" placeholder="Describa brevemente el motivo del anticipo..."></textarea></div>
+        </div>
+        <button class="btn-primary">Enviar Solicitud por Email</button>
+      </div>
+      <div class="anticipo-historial">
+        <p class="form-card-title" style="padding:14px 16px; border-bottom:1.5px solid #e0e6f0;">Historial de Anticipos</p>
+        <div class="liq-row"><div class="liq-mes"><span>Marzo 2025</span></div><span class="liq-monto">$150.000</span><span class="badge ok">Aprobado</span></div>
+        <div class="liq-row"><div class="liq-mes"><span>Enero 2025</span></div><span class="liq-monto">$200.000</span><span class="badge ok">Aprobado</span></div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function switchTab(id) {
+      var ids = ['info','liquidaciones','vacaciones','asistencia','licencias','anticipos'];
+      document.querySelectorAll('.nav-tab').forEach(function(t, i) {
+        var active = ids[i] === id;
+        t.classList.toggle('active', active);
+        t.setAttribute('aria-selected', active);
+      });
+      document.querySelectorAll('.section').forEach(function(s) {
+        s.classList.toggle('active', s.id === 'sec-' + id);
+      });
+    }
+  </script>
+</body>
+</html>
