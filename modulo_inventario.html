@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Módulo Inventario / Ventas — ERP Seguridad LTDA</title>
+  <link rel="stylesheet" href="modulo_inventario.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="hero-badge">ERP Seguridad LTDA</span>
+      <h1>Módulo Inventario / Ventas</h1>
+      <p>Control preciso de entradas y salidas de mercadería, niveles de stock, precios y estadísticas de ventas para la toma oportuna de decisiones.</p>
+    </div>
+  </header>
+
+  <nav class="nav-tabs" role="tablist">
+    <button class="nav-tab active" onclick="switchTab('productos')" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73L13 2.27a2 2 0 0 0-2 0L4 6.27A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73L11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+      Productos
+    </button>
+    <button class="nav-tab" onclick="switchTab('bodegas')" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      Bodegas
+    </button>
+    <button class="nav-tab" onclick="switchTab('stock')" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      Stock
+    </button>
+    <button class="nav-tab" onclick="switchTab('precios')" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      Precios
+    </button>
+    <button class="nav-tab" onclick="switchTab('clientes')" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+      Clientes
+    </button>
+    <button class="nav-tab" onclick="switchTab('informes')" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Informes
+    </button>
+  </nav>
+
+  <main class="content">
+
+    <!-- PRODUCTOS -->
+    <section id="sec-productos" class="section active">
+      <div class="section-header">
+        <h2>1. Ficha Completa de Productos</h2>
+        <p>Códigos alfanuméricos, grupos y subgrupos, código de barra, fotografía, ficha técnica, unidades de medida, atributos especiales y ubicación en bodegas.</p>
+      </div>
+      <div class="prod-ficha">
+        <div class="prod-img-wrap">
+          <div class="prod-img">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73L13 2.27a2 2 0 0 0-2 0L4 6.27A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73L11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <div class="prod-btns">
+            <button class="btn-sm">Ver Stock</button>
+            <button class="btn-sm">Ver Ventas</button>
+            <button class="btn-sm">Ver Compras</button>
+            <button class="btn-sm">Etiqueta</button>
+          </div>
+        </div>
+        <div class="prod-detail">
+          <div class="prod-head">
+            <div>
+              <p class="prod-nombre">Cámara de Seguridad IP 4K</p>
+              <p class="prod-codigo">Código: CAM-001 · EAN: 7891234567890</p>
+            </div>
+            <span class="badge ok">Activo</span>
+          </div>
+          <div class="detail-tabs">
+            <button class="dtab active">General</button>
+            <button class="dtab">Técnica</button>
+            <button class="dtab">Bodegas</button>
+            <button class="dtab">Atributos</button>
+            <button class="dtab">Sustitutos</button>
+          </div>
+          <div class="detail-body">
+            <div class="info-row"><span>Grupo</span><strong>Equipos de Seguridad</strong></div>
+            <div class="info-row"><span>Subgrupo</span><strong>Cámaras IP</strong></div>
+            <div class="info-row"><span>Marca</span><strong>SecureTech</strong></div>
+            <div class="info-row"><span>Unidad base</span><strong>Unidad</strong></div>
+            <div class="info-row"><span>Stock mínimo</span><strong>5 unidades</strong></div>
+            <div class="info-row"><span>Stock máximo</span><strong>50 unidades</strong></div>
+            <div class="info-row"><span>Impuesto</span><strong>IVA 19%</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BODEGAS -->
+    <section id="sec-bodegas" class="section">
+      <div class="section-header">
+        <h2>3. Múltiples Bodegas</h2>
+        <p>Control ilimitado de bodegas con seguimiento de entradas, salidas y niveles de stock por ubicación.</p>
+      </div>
+      <div class="bodegas-grid">
+        <div class="bodega-card">
+          <div class="bod-header">
+            <div class="bod-icon blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+            <div><p class="bod-name">Bodega Central</p><p class="bod-loc">Santiago · Calle Ficticia 100</p></div>
+          </div>
+          <div class="bod-stats">
+            <div class="bstat"><p class="bval">247</p><p class="blabel">Productos</p></div>
+            <div class="bstat"><p class="bval green">92%</p><p class="blabel">Ocupación</p></div>
+            <div class="bstat"><p class="bval amber">12</p><p class="blabel">Bajo mínimo</p></div>
+          </div>
+        </div>
+        <div class="bodega-card">
+          <div class="bod-header">
+            <div class="bod-icon green"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+            <div><p class="bod-name">Bodega Norte</p><p class="bod-loc">Antofagasta · Parque Industrial</p></div>
+          </div>
+          <div class="bod-stats">
+            <div class="bstat"><p class="bval">128</p><p class="blabel">Productos</p></div>
+            <div class="bstat"><p class="bval green">67%</p><p class="blabel">Ocupación</p></div>
+            <div class="bstat"><p class="bval red">3</p><p class="blabel">Agotados</p></div>
+          </div>
+        </div>
+        <div class="bodega-card">
+          <div class="bod-header">
+            <div class="bod-icon amber"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+            <div><p class="bod-name">Bodega Sur</p><p class="bod-loc">Concepción · Zona Industrial</p></div>
+          </div>
+          <div class="bod-stats">
+            <div class="bstat"><p class="bval">89</p><p class="blabel">Productos</p></div>
+            <div class="bstat"><p class="bval green">54%</p><p class="blabel">Ocupación</p></div>
+            <div class="bstat"><p class="bval amber">5</p><p class="blabel">Bajo mínimo</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="mov-table-wrap">
+        <p class="tabla-titulo">Últimos movimientos</p>
+        <table class="data-table">
+          <thead><tr><th>Fecha</th><th>Tipo</th><th>Producto</th><th>Bodega</th><th>Cantidad</th><th>Guía</th></tr></thead>
+          <tbody>
+            <tr><td>07/06/2025</td><td><span class="badge ok">Entrada</span></td><td>Cámara IP 4K</td><td>Central</td><td>+20</td><td>E-00123</td></tr>
+            <tr><td>06/06/2025</td><td><span class="badge warn">Salida</span></td><td>Sensor de Movimiento</td><td>Norte</td><td>-5</td><td>S-00456</td></tr>
+            <tr><td>05/06/2025</td><td><span class="badge info">Traslado</span></td><td>Cable UTP Cat6 (100m)</td><td>Central → Sur</td><td>10</td><td>T-00789</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- STOCK -->
+    <section id="sec-stock" class="section">
+      <div class="section-header">
+        <h2>6. Optimización de Niveles de Stock</h2>
+        <p>Control de stock mínimo, de reposición y máximo, a nivel de bodega y consolidado de empresa. Reservas y consignaciones incluidas.</p>
+      </div>
+      <div class="stock-list">
+        <div class="stock-item">
+          <div class="stock-info"><strong>Cámara de Seguridad IP 4K</strong><span>CAM-001 · SecureTech</span></div>
+          <div class="stock-levels">
+            <div class="slevel"><span class="sl-label">Actual</span><span class="sl-val">38</span></div>
+            <div class="slevel"><span class="sl-label">Mín.</span><span class="sl-val red">5</span></div>
+            <div class="slevel"><span class="sl-label">Repos.</span><span class="sl-val amber">15</span></div>
+            <div class="slevel"><span class="sl-label">Máx.</span><span class="sl-val">50</span></div>
+          </div>
+          <div class="bar-wrap full"><div class="bar" style="width:76%; background:#1a3a6b;"></div></div>
+          <span class="badge ok">OK</span>
+        </div>
+        <div class="stock-item">
+          <div class="stock-info"><strong>Sensor de Movimiento PIR</strong><span>SEN-022 · SecureTech</span></div>
+          <div class="stock-levels">
+            <div class="slevel"><span class="sl-label">Actual</span><span class="sl-val">8</span></div>
+            <div class="slevel"><span class="sl-label">Mín.</span><span class="sl-val red">5</span></div>
+            <div class="slevel"><span class="sl-label">Repos.</span><span class="sl-val amber">15</span></div>
+            <div class="slevel"><span class="sl-label">Máx.</span><span class="sl-val">40</span></div>
+          </div>
+          <div class="bar-wrap full"><div class="bar" style="width:20%; background:#c07a00;"></div></div>
+          <span class="badge warn">Bajo</span>
+        </div>
+        <div class="stock-item">
+          <div class="stock-info"><strong>Panel de Alarma Central</strong><span>PAL-005 · AlarmPro</span></div>
+          <div class="stock-levels">
+            <div class="slevel"><span class="sl-label">Actual</span><span class="sl-val">0</span></div>
+            <div class="slevel"><span class="sl-label">Mín.</span><span class="sl-val red">3</span></div>
+            <div class="slevel"><span class="sl-label">Repos.</span><span class="sl-val amber">8</span></div>
+            <div class="slevel"><span class="sl-label">Máx.</span><span class="sl-val">20</span></div>
+          </div>
+          <div class="bar-wrap full"><div class="bar" style="width:0%;"></div></div>
+          <span class="badge danger">Agotado</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRECIOS -->
+    <section id="sec-precios" class="section">
+      <div class="section-header">
+        <h2>7. Listas de Precios</h2>
+        <p>Manejo de listas basadas en márgenes, descuentos, ofertas y promociones con fechas de vigencia. Actualización masiva.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card"><div class="ficon blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3>Precio Base</h3><p>Definición del precio de referencia por producto. Base para todas las demás listas.</p></div>
+        <div class="feature-card"><div class="ficon green"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><h3>Margen sobre Costo</h3><p>Listas automáticas basadas en porcentaje de margen sobre el costo de adquisición.</p></div>
+        <div class="feature-card"><div class="ficon amber"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div><h3>Ofertas y Promociones</h3><p>Precios especiales con fechas de inicio y término. Activación y desactivación automática.</p></div>
+        <div class="feature-card"><div class="ficon red"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div><h3>Actualización Masiva</h3><p>Modificación simultánea de precios para grupos, categorías o toda la lista de productos.</p></div>
+      </div>
+      <div class="precio-table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Lista</th><th>Producto</th><th>Precio Base</th><th>% Ajuste</th><th>Precio Final</th><th>Vigencia</th></tr></thead>
+          <tbody>
+            <tr><td>Lista Mayorista</td><td>Cámara IP 4K</td><td>$120.000</td><td>-10%</td><td>$108.000</td><td>Indefinida</td></tr>
+            <tr><td>Lista Minorista</td><td>Cámara IP 4K</td><td>$120.000</td><td>+25%</td><td>$150.000</td><td>Indefinida</td></tr>
+            <tr><td>Oferta Junio</td><td>Sensor PIR</td><td>$18.500</td><td>-15%</td><td>$15.725</td><td>01/06 – 30/06</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- CLIENTES -->
+    <section id="sec-clientes" class="section">
+      <div class="section-header">
+        <h2>8. Ficha del Cliente</h2>
+        <p>Datos básicos, direcciones de despacho, plazo de pago, lista de precio asociada y estadísticas de compra.</p>
+      </div>
+      <div class="cliente-ficha">
+        <div class="cli-header">
+          <div class="cli-avatar">EP</div>
+          <div>
+            <p class="cli-nombre">Empresa de Prueba S.A.</p>
+            <p class="cli-rut">RUT: 76.543.210-K · cliente desde 2021</p>
+          </div>
+          <span class="badge ok">Activo</span>
+        </div>
+        <div class="cli-grid">
+          <div class="info-row"><span>Email</span><strong>compras@empresa.cl</strong></div>
+          <div class="info-row"><span>Teléfono</span><strong>+56 2 2234 5678</strong></div>
+          <div class="info-row"><span>Dirección principal</span><strong>Av. Providencia 500, Santiago</strong></div>
+          <div class="info-row"><span>Dirección despacho</span><strong>Calle Industrial 20, Pudahuel</strong></div>
+          <div class="info-row"><span>Plazo de pago</span><strong>30 días</strong></div>
+          <div class="info-row"><span>Lista de precio</span><strong>Lista Mayorista</strong></div>
+          <div class="info-row"><span>Límite de crédito</span><strong>$5.000.000</strong></div>
+          <div class="info-row"><span>Vendedor asignado</span><strong>Carlos Mora</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFORMES -->
+    <section id="sec-informes" class="section">
+      <div class="section-header">
+        <h2>9. Consultas e Informes</h2>
+        <p>Estadísticas de ventas, control de stock, rotación de inventario, guías de entrada/salida y más reportes para la gestión.</p>
+      </div>
+      <div class="informes-grid">
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg><span>Stock por Bodegas</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg><span>Guías de Entrada y Salida</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><span>Control Niveles de Stock</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>Listas de Precios</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg><span>Estadísticas de Ventas</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span>Ventas por Cliente</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10z"/></svg><span>Ventas por Región / Ciudad</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg><span>Rotación de Inventario</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg><span>Vencimiento de Productos</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/></svg><span>Toma de Inventario</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Consignaciones por Cliente</span></div>
+        <div class="informe-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg><span>Control N° Series Vendidas</span></div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function switchTab(id) {
+      var ids = ['productos','bodegas','stock','precios','clientes','informes'];
+      document.querySelectorAll('.nav-tab').forEach(function(t, i) {
+        var active = ids[i] === id;
+        t.classList.toggle('active', active);
+        t.setAttribute('aria-selected', active);
+      });
+      document.querySelectorAll('.section').forEach(function(s) {
+        s.classList.toggle('active', s.id === 'sec-' + id);
+      });
+    }
+  </script>
+</body>
+</html>
